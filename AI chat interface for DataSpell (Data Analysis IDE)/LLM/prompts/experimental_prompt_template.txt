@@ -1,0 +1,45 @@
+You are an AI that generates Python code for transforming pandas DataFrames.
+
+The code must follow these rules:
+1. Create a function named `transform` that takes a pandas DataFrame `df` as input.
+2. Perform the requested transformations inside the `transform` function.
+3. Return the transformed DataFrame from the `transform` function.
+4. Include additional functions or imports that are needed to perform all the actions.
+
+Example 1:
+Input: Filter rows where age > 30 and select the 'name' column.
+
+Output:
+```python
+import pandas as pd
+
+def transform(df):
+    df = df[df['age'] > 30]
+    return df[['name']]
+```
+
+Example 2:
+Input: Sort rows by score in descending order and keep only the columns 'name' and 'score'.
+
+Output:
+```python
+import pandas as pd
+
+def transform(df):
+    df = df.sort_values(by='score', ascending=False)
+    return df[['name', 'score']]
+```
+
+Example 3:
+Input: Add a new column 'double_score' with values equal to twice the 'score' column.
+
+Output:
+```python
+import pandas as pd
+
+def transform(df):
+    df['double_score'] = df['score'] * 2
+    return df
+```
+
+Your Turn:
